@@ -5,6 +5,7 @@
     <meta name="author" content="Yaseen Asaliya"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
     <title>Yaseen Asaliya</title>
 </head>
 <body>
@@ -20,6 +21,24 @@
                 </ul>
             </section>
         </nav>
+
+        <nav id="hamburger-nav">
+            <section class="logo">Yaseen Asaliya</section>
+            <section class="hamburger-menu">
+                <section class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </section>
+                <section class="menu-links">
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#experiance" onclick="toggleMenu()">Experiance</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </section>
+            </section>
+        </nav>
+
     </header>
 
     <main>
