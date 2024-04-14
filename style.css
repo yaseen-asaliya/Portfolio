@@ -184,6 +184,10 @@ a:hover {
     object-fit: cover;
 }
 
+#leetcode-logo {
+    border-radius: 50%;
+}
+
 .section__text {
   align-self: center;
   text-align: center;
@@ -198,9 +202,14 @@ a:hover {
 }
 
 .section__text__p2 {
-  font-size: 1.75rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
+
+.section__text__p3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
 
 .title {
   font-size: 3rem;
