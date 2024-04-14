@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Yaseen Asaliya"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <title>Yaseen Asaliya</title>
+</head>
+<body>
+    <header>
+        <!-- Desktop Navbar -->
+        <nav id="desktop-nav">
+            <section class="logo">Yaseen Asaliya</section>
+            <section>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experiance">Experiance</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </section>
+        </nav>
+
+        <!-- Hambuger (Mobile & IPad) Navbar -->
+        <nav id="hamburger-nav">
+            <section class="logo">Yaseen Asaliya</section>
+            <section class="hamburger-menu">
+                <section class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </section>
+                <section class="menu-links">
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#experiance" onclick="toggleMenu()">Experiance</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </section>
+            </section>
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- Profile Section -->
+        <section id="profile">
+            <section class="section__pic-container">
+                <img src="./assets/personal-photo.jpg" alt="Yaseen Asaliya profile picture">
+            </section>
+            <section class="section__text">
+                <p class="section__text__p1">Hello, I'm </p>
+                <h1 class="title">Yaseen Asaliya</h1>
+                <p class="section__text__p2">Software Engineer</p>
+                <section class="btn-continer">
+                    <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">Download CV</button>
+                    <button class="btn btn-color-1" onclick="location.href = './#contact'">Contact Info</button>
+                </section>
+
+                <section id="socials-container">
+                    <img src="./assets/linkedin.png" alt="My Linkedin pofile" class="icon" onclick="location.href = 'https://www.linkedin.com/in/yaseenasaliya/'">
+                    <img src="./assets/github.png" alt="My Github pofile" class="icon" onclick="location.href = 'https://github.com/yaseen-asaliya'">
+                </section>
+            </section>
+        </section>
+       
+        <!-- About Section -->
+        <section id="about">
+            <p class="section__text__p1">Get To Kow More</p>
+            <h1 class="title">About Me</h1>
+            <section class="section-container">
+                <section class="section__pic-container">
+                    <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic">
+                </section>
+                <section class="about-details-container">
+                    <section class="about-container">
+                        <section class="details-container">
+                            <img src="./assets/experience.png" alt="Experiance icon" class="icon">
+                            <h3>Experiance</h3>
+                            <p>+2 years <br>Backend Developemnt</p>
+                        </section>
+                        <section class="details-container">
+                            <img src="./assets/education.png" alt="Experiance icon" class="icon">
+                            <h3>Education</h3>
+                            <p>B.Sc. Bachelors Degree<br>Software Engineering</p>
+                        </section>
+                    </section>
+                    <section class="text-continer">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quae commodi dolore vel esse totam, repellat nesciunt dolorum perferendis corrupti mollitia, officiis nobis neque necessitatibus rerum ullam cumque voluptates quaerat!</p>
+                    </section>
+                </section>
+            </section>
+            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
+        </section>
+    </main>
+    
+    <footer>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
