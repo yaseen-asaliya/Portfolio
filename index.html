@@ -1,220 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Yaseen Asaliya"
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-    <title>Yaseen Asaliya</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Yaseen Asaliya" />
+  <meta name="description" content="Yaseen Asaliya – Software Engineer & DevOps Engineer" />
+  <title>Yaseen Asaliya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <!-- Desktop Navbar -->
-        <nav id="desktop-nav">
-            <section class="logo">Yaseen Asaliya</section>
-            <section>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experiance</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </section>
-        </nav>
 
-        <!-- Hambuger (Mobile & IPad) Navbar -->
-        <nav id="hamburger-nav">
-            <section class="logo">Yaseen Asaliya</section>
-            <section class="hamburger-menu">
-                <section class="hamburger-icon" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </section>
-                <section class="menu-links">
-                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                </section>
-            </section>
-        </nav>
+  <!-- Starfield Canvas -->
+  <canvas id="starfield"></canvas>
 
-    </header>
+  <!-- Nebula blobs -->
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+  <div class="nebula nebula-3"></div>
 
-    <main>
-        <!-- Profile Section -->
-        <section id="profile">
-            <section class="section__pic-container">
-                <img src="./assets/personal-photo.jpg" alt="Yaseen Asaliya profile picture">
-            </section>
-            <section class="section__text">
-                <p class="section__text__p1">Hello, I'm </p>
-                <h1 class="title">Yaseen Asaliya</h1>
-                <p class="section__text__p2">B.Sc. Software Engineering</p>
-                <h2 class="section__text__p3">DevOps Engineer & Backend Developer</h2>
-                <section class="btn-continer">
-                    <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">Download CV</button>
-                    <button class="btn btn-color-1" onclick="location.href = './#contact'">Contact Info</button>
-                </section>
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>YA<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-                <section id="socials-container">
-                    <img src="./assets/linkedin.png" alt="My Linkedin pofile" class="icon" onclick="location.href = 'https://www.linkedin.com/in/yaseenasaliya/'">
-                    <img src="./assets/github.png" alt="My Github pofile" class="icon" onclick="location.href = 'https://github.com/yaseen-asaliya'">
-                    <img src="./assets/leetcode.png" alt="My Leetcode pofile" class="icon" onclick="location.href = 'https://leetcode.com/yaseenasaliya/'" id="leetcode-logo">
-                </section>
-            </section>
-        </section>
-       
-        <!-- About Section -->
-        <section id="about">
-            <p class="section__text__p1">Get To Kow More</p>
-            <h1 class="title">About Me</h1>
-            <section class="section-container">
-                <section class="about-details-container">
-                    <section class="about-container">
-                        <section class="details-container">
-                            <img src="./assets/devops.png" alt="Experiance icon" class="icon">
-                            <h3>+1 year in DevOps Engineering</h3>
-                            <br>
-                            <p>8 months as a DevOps Engineer Trainee, then 4 months as a DevOps Engineer for a charity organization.</p>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#experience" class="mob-link">Experience</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
 
-                        </section>
+  <main>
 
-                        <section class="details-container">
-                            <img src="./assets/backend.png" alt="Experiance icon" class="icon">
-                            <h3>+4 months in Backend Developemnt</h3>
-                            <br>
-                            <p>4 months of experience as a Backend Developer Trainee at Exalt Technology.</p>
-                        </section>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-ring hero-ring-1"></div>
+      <div class="hero-ring hero-ring-2"></div>
+      <div class="hero-ring hero-ring-3"></div>
 
-                        <section class="details-container">
-                            <img src="./assets/university.png" alt="Experiance icon" class="icon">
-                            <h3>Education</h3>
-                            <br>
-                            <p>B.Sc. Bachelors Degree in 
-                                <br> computer Science Apprenticeship Software Engineering Track.
-                            </p>
-                        </section>
-                    </section>
-                    <section class="text-continer">
-                        <p>Yaseen Asaliya, a tech professional from Palestine, holds a B.Sc. in Computer Science with a focus on Software Engineering. He gained hands-on experience in Backend Development and DevOps Engineering through internships at EXALT Technology Ltd, mastering tools like Jenkins and Docker. Fluent in Arabic with strong problem-solving skills, Yaseen is committed to continual growth and making impactful contributions to the tech field.</p>
-                    </section>
-                </section>
-            </section>
-            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
-        </section>
+      <div class="hero-content">
+        <p class="hero-greeting">Hello, Universe. I'm</p>
+        <h1 class="hero-name">Yaseen Asaliya</h1>
+        <div class="hero-typewriter">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-sub">Backend Engineer &nbsp;·&nbsp; DevOps &nbsp;·&nbsp; AWS &nbsp;·&nbsp; Palestine</p>
+        <div class="hero-btns">
+          <a href="https://docs.google.com/document/d/13gqVn5uPjPx10lk-Urgq6SPkvSoVIW45zHSS10CZNcc/edit?tab=t.0#heading=h.gjdgxs" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+          <a href="#contact" class="btn btn-secondary">Launch Contact</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/yaseenasaliya/" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/yaseen-asaliya" target="_blank" aria-label="GitHub" class="social-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://leetcode.com/yaseenasaliya/" target="_blank" aria-label="LeetCode 500+" class="social-icon lc-icon">
+            <svg width="20" height="20" viewBox="0 0 50 50" fill="currentColor"><path d="M36.7 36.2H20.9c-1.2 0-2.1-.9-2.1-2.1s.9-2.1 2.1-2.1h15.8c1.2 0 2.1.9 2.1 2.1s-.9 2.1-2.1 2.1zm-22-9.2 9.5-9.5-9.5-9.5-3 3 6.5 6.5-6.5 6.5 3 3zm34-2.1c0 12.1-9.9 22-22 22s-22-9.9-22-22 9.9-22 22-22 22 9.9 22 22z"/></svg>
+            <span>500+</span>
+          </a>
+        </div>
+      </div>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <p class="section__text__p1">Explore My</p>
-            <h1 class="title">Experiance</h1>
-            <section class="experiance-details-container">
-                <section class="about-conatainer">
-                    
-                    <!-- Backend Developemt Section -->
+      <div class="hero-photo-wrapper">
+        <div class="orbit-ring"></div>
+        <div class="orbit-dot"></div>
+        <img src="./assets/personal-photo.jpg" alt="Yaseen Asaliya" class="hero-photo" />
+      </div>
 
-                    <section class="details">
-                        <h2 class="experience-subtitle">Backend Developemt</h2>
-                        <section class="article-container">
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>Java</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
 
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>Python</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section-tag">// about.me</div>
+      <h2 class="section-title">About <span class="glow">Me</span></h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            Software Engineer from <strong>Palestine</strong> with a B.Sc. in Computer Science (Software Engineering Track) from An-Najah National University. Currently building production-grade RESTful APIs at <strong>Radix Technology</strong>, integrating payment gateways, AWS cloud services, and third-party solutions.
+          </p>
+          <p>
+            My journey spans Backend Development and DevOps Engineering — from deploying Spring Boot microservices to designing CI/CD pipelines with Jenkins and Docker. I solve 500+ problems on LeetCode and believe clean architecture is non-negotiable.
+          </p>
+          <p>
+            I'm deeply passionate about <strong>Artificial Intelligence</strong> — exploring how LLMs, automation, and intelligent systems are reshaping what's possible in software. Always experimenting with AI tools and looking for ways to weave them into real-world applications.
+          </p>
+          <div class="about-stats">
+            <div class="stat-card reveal">
+              <span class="stat-num">2+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-num">500+</span>
+              <span class="stat-label">LeetCode Solved</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-num">8+</span>
+              <span class="stat-label">AWS Services</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-cards reveal">
+          <div class="info-card">
+            <div class="info-card-icon">🎓</div>
+            <div>
+              <h4>Education</h4>
+              <p>B.Sc. Computer Science<br/>An-Najah National University<br/><em>2019 – 2023</em></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">🌍</div>
+            <div>
+              <h4>Location</h4>
+              <p>Palestine<br/>Open to remote &amp; relocation</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">💬</div>
+            <div>
+              <h4>Languages</h4>
+              <p>Arabic — Fluent<br/>English — Very Good</p>
+            </div>
+          </div>
+          <a href="https://www.credly.com/badges/fa0197a0-bb41-4e78-91f5-7a8a3b86337f" target="_blank" class="info-card cert-card">
+            <div class="info-card-icon">🏅</div>
+            <div>
+              <h4>AWS Certified</h4>
+              <p>Cloud Practitioner<br/><em class="cert-verify">View on Credly ↗</em></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>Spring Boot</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section-tag">// work.history</div>
+      <h2 class="section-title">Work <span class="glow">Experience</span></h2>
+      <div class="timeline">
 
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>API's</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Software Engineer – Backend Developer</h3>
+                <span class="company">Radix Technology</span>
+              </div>
+              <span class="date-badge">May 2024 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Designed and developed RESTful APIs using the MVC architecture.</li>
+              <li>Integrated third-party services: payment gateways (Lahza, E-Sadad), authentication, email &amp; log services, and OTP solutions.</li>
+              <li>Deployed cloud-based solutions on AWS and managed database configuration and optimization.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>NestJS</span><span>AWS</span><span>REST APIs</span><span>MySQL</span>
+            </div>
+          </div>
+        </div>
 
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>Database</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
-                        </section>
-                    </section>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>DevOps Engineer</h3>
+                <span class="company">Art To Heart <em>(Charity Org)</em></span>
+              </div>
+              <span class="date-badge">Volunteer</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built CI/CD pipelines using Jenkins to build, test, and deploy ASP and React applications.</li>
+              <li>Created dockerized images with Docker and Docker Compose for pipelines.</li>
+              <li>Configured email notifications for team members and automatic rollback on failure.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Jenkins</span><span>Docker</span><span>CI/CD</span><span>React</span>
+            </div>
+          </div>
+        </div>
 
-                    <!-- DevOps Engineering Section -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>DevOps Engineer Trainee</h3>
+                <span class="company">EXALT Technology Ltd, Nablus</span>
+              </div>
+              <span class="date-badge">Oct 2022 – Feb 2023</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Gained expertise in System Administration, Bash Scripting, Ansible, Docker, Kubernetes, and OpenStack — with certifications in each.</li>
+              <li>Designed practical solutions and contributed to future project architectures.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Kubernetes</span><span>Ansible</span><span>OpenStack</span><span>Linux</span>
+            </div>
+          </div>
+        </div>
 
-                    <section class="details">
-                        <h2 class="experience-subtitle">DevOps Engineering</h2>
-                        <section class="article-container">
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>Java</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Backend Developer Trainee</h3>
+                <span class="company">EXALT Technology Ltd, Nablus</span>
+              </div>
+              <span class="date-badge">Jun 2022 – Aug 2022</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built strong foundation in Spring: repositories, controllers, security, and services.</li>
+              <li>Applied best practices to develop clean, well-documented projects.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Java</span><span>Spring Boot</span><span>Spring Security</span>
+            </div>
+          </div>
+        </div>
 
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>Python</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
+      </div>
+    </section>
 
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>Spring Boot</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section-tag">// tech.stack</div>
+      <h2 class="section-title">Skills &amp; <span class="glow">Technologies</span></h2>
+      <div class="skills-grid">
 
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>API's</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="skill-icon">⚡</span> Languages</h3>
+          <div class="skill-pills">
+            <span>Java</span><span>Python</span><span>C/C++</span><span>C#</span>
+            <span>JavaScript</span><span>HTML/CSS</span>
+          </div>
+        </div>
 
-                            <article>
-                                <img src="./assets/checkmark.png" alt="Experiance-icon" class="icon">
-                                <section>
-                                    <h3>Database</h3>
-                                    <p>Experianced</p>
-                                </section>
-                            </article>
-                        </section>
-                    </section>
-                    
-                </section>
-            </section>
-        </section>
-    </main>
-    
-    <footer>
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="skill-icon">🚀</span> Frameworks</h3>
+          <div class="skill-pills">
+            <span>Spring Boot</span><span>NestJS</span><span>Django</span>
+            <span>Flask</span><span>.NET</span>
+          </div>
+        </div>
 
-    </footer>
-    <script src="script.js"></script>
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="skill-icon">🗄️</span> Databases</h3>
+          <div class="skill-pills">
+            <span>MySQL</span><span>MariaDB</span><span>SQLite3</span><span>DynamoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title">
+            <span class="skill-icon">☁️</span> AWS
+            <a href="https://www.credly.com/badges/fa0197a0-bb41-4e78-91f5-7a8a3b86337f" target="_blank" class="cert-badge">✓ Certified</a>
+          </h3>
+          <div class="skill-pills">
+            <span>EC2</span><span>S3</span><span>Lambda</span><span>API Gateway</span>
+            <span>SQS</span><span>SNS</span><span>DynamoDB</span><span>IAM</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="skill-icon">🔧</span> DevOps &amp; Tools</h3>
+          <div class="skill-pills">
+            <span>Docker</span><span>Kubernetes</span><span>Jenkins</span>
+            <span>Ansible</span><span>GitHub Actions</span><span>Nginx</span>
+            <span>Apache</span><span>Linux</span><span>Bash</span>
+            <span>Maven</span><span>Jira</span><span>OpenStack</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="skill-icon">🧠</span> Concepts</h3>
+          <div class="skill-pills">
+            <span>REST APIs</span><span>MVC</span><span>CI/CD</span>
+            <span>Agile/Scrum</span><span>DSA</span><span>Microservices</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal ai-group">
+          <h3 class="skill-group-title"><span class="skill-icon">🤖</span> AI &amp; Interests</h3>
+          <div class="skill-pills ai-pills">
+            <span>Large Language Models</span><span>AI Automation</span>
+            <span>Prompt Engineering</span><span>AI-Powered APIs</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-tag">// deployed.missions</div>
+      <h2 class="section-title">Featured <span class="glow">Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/project-1.png" alt="Project 1" />
+            <div class="project-overlay">
+              <a href="https://github.com/yaseen-asaliya" target="_blank" class="overlay-btn">View on GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Payment Gateway Integration</h3>
+            <p>Integrated Lahza &amp; E-Sadad payment gateways into a production NestJS application, handling webhooks, verification, and transaction logging on AWS.</p>
+            <div class="project-tags">
+              <span>NestJS</span><span>AWS</span><span>REST API</span><span>MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/project-2.png" alt="Project 2" />
+            <div class="project-overlay">
+              <a href="https://github.com/yaseen-asaliya" target="_blank" class="overlay-btn">View on GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>CI/CD Pipeline System</h3>
+            <p>Designed Jenkins pipelines for building, testing, and deploying ASP.NET and React apps with Docker Compose, automatic rollback, and email alerts.</p>
+            <div class="project-tags">
+              <span>Jenkins</span><span>Docker</span><span>CI/CD</span><span>ASP.NET</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/project-3.png" alt="Project 3" />
+            <div class="project-overlay">
+              <a href="https://github.com/yaseen-asaliya" target="_blank" class="overlay-btn">View on GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Spring Boot Microservices</h3>
+            <p>Built and secured RESTful microservices with Spring Boot &amp; Spring Security, following MVC best practices with repository pattern and full API documentation.</p>
+            <div class="project-tags">
+              <span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>MySQL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="github-cta reveal">
+        <p>More projects live on GitHub</p>
+        <a href="https://github.com/yaseen-asaliya" target="_blank" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Explore GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="section-tag">// initiate.contact</div>
+      <h2 class="section-title">Get In <span class="glow">Touch</span></h2>
+      <p class="contact-sub">Open to new opportunities, collaborations, or just a friendly chat about tech.</p>
+      <div class="contact-grid">
+        <a href="mailto:yaseen.asaliya22@gmail.com" class="contact-card reveal">
+          <div class="contact-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h4>Email</h4>
+          <p>yaseen.asaliya22@gmail.com</p>
+        </a>
+        <a href="https://www.linkedin.com/in/yaseenasaliya/" target="_blank" class="contact-card reveal">
+          <div class="contact-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <h4>LinkedIn</h4>
+          <p>/in/yaseenasaliya</p>
+        </a>
+        <a href="https://github.com/yaseen-asaliya" target="_blank" class="contact-card reveal">
+          <div class="contact-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <h4>GitHub</h4>
+          <p>yaseen-asaliya</p>
+        </a>
+        <a href="tel:+972598401968" class="contact-card reveal">
+          <div class="contact-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.07 6.07l1.27-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h4>Phone</h4>
+          <p>(+972) 59-840-1968</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo"><span class="logo-bracket">&lt;</span>YA<span class="logo-bracket">/&gt;</span></span>
+      <p>Crafted with curiosity from Palestine 🇵🇸</p>
+      <p class="footer-copy">© 2025 Yaseen Asaliya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
