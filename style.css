@@ -668,6 +668,58 @@ ul { list-style: none; }
   font-weight: 500;
 }
 
+/* ---------- FREELANCE ---------- */
+.freelance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-bottom: 1rem;
+}
+.freelance-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  backdrop-filter: blur(12px);
+  transition: border-color var(--transition), transform var(--transition);
+}
+.freelance-card:hover { border-color: rgba(56,189,248,0.4); transform: translateY(-6px); }
+.freelance-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+.freelance-card-header h3 { font-size: 1.05rem; font-weight: 600; }
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #4ade80;
+  border: 1px solid rgba(74,222,128,0.35);
+  background: rgba(74,222,128,0.1);
+  border-radius: 50px;
+  padding: 2px 10px;
+}
+.live-badge::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+.freelance-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+.freelance-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.freelance-card:hover .freelance-link { text-decoration: underline; }
+
 .github-cta {
   display: flex;
   flex-direction: column;
